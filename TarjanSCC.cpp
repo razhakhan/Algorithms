@@ -105,6 +105,14 @@ int main() {
         for(i=0; i<n; i++) {
             g[i].clear();
         }
+        
+        //remove remaining stack elements
+        while(sk.empty()==false) {
+            sk.pop();
+        }
+        
+        timer=0; //set timer=0 for new test case
+        
     }
     return 0;
 }
