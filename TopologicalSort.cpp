@@ -19,7 +19,7 @@ int dfs(int x) {
 		}
 	}
 	sk.push(x);
-	//push the deepest node in the tree to stack
+	//push the deepest node in the dfs tree to stack
 }
 
 int main() {
