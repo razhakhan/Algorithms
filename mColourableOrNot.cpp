@@ -9,7 +9,7 @@ vector <bool> visited;
 vector <int> color;
 vector <vector <int>> g;
 int n,e,m;
-int ans=1;
+int ans;
 
 void bfs(int src) {
     
@@ -30,8 +30,10 @@ void bfs(int src) {
             if(color[x]==color[y]) 
                 color[y]++;
                 
-            if(color[y]>m)
+            if(color[y]>m) {
                 ans=0;
+                return;
+            }
         }
     }
 }
@@ -57,9 +59,13 @@ int main() {
         
         cin>>m; //number of colours
         
-        for(i=0; i<n; i++)
+        ans=1;
+        
+        for(i=0; i<n; i++) {
             if(visited[i]==false)
                 bfs(i);
+            if(ans==0) break;
+        }
         
         if(ans==1) 
             cout<<"colorable"<<endl;
@@ -89,5 +95,16 @@ ip:
 
 op:
 colorable
+
+ip:
+1
+3 3
+0 1
+1 2
+0 2
+2
+
+op:
+not colorable
 
 */
