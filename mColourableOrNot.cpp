@@ -11,6 +11,7 @@ vector <vector <int>> g;
 int n,e,m;
 int ans;
 
+//bfs function
 void bfs(int src) {
     
     queue <int> q;
@@ -27,10 +28,10 @@ void bfs(int src) {
                 visited[y]=true;
             }
             
-            if(color[x]==color[y]) 
+            if(color[x]==color[y])  //if color of adj nodes x,y is same, increment the colour of y
                 color[y]++;
                 
-            if(color[y]>m) {
+            if(color[y]>m) {    //if any color is greater than m, graph is not m colourable, make ans=0
                 ans=0;
                 return;
             }
